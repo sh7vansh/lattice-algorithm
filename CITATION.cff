@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Singh"
+    given-names: "Shivansh"
+title: "Basis Discovery in Complete Lattices"
+version: 1.0.0
+date-released: 2026-09-14
+url: "https://github.com/sh7vansh/lattice-algorithm"
+repository-code: "https://github.com/sh7vansh/lattice-algorithm"
+abstract: "A Lean 4 formalization of the Basis Discovery Algorithm and Algorithmic Friction in abstract complete lattices. Models how greedy generator extraction operates within closure systems and explores the structural constraints (such as geometric and semimodular friction) that dictate algorithmic performance beyond discrete combinatorial boundaries."
+license: Apache-2.0
