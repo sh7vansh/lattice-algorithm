@@ -11,8 +11,8 @@ import Mathlib.SetTheory.Ordinal.Principal
 import Mathlib.Data.Set.Basic
 
 /-!
-# Ontological Machine
-This file contains the core definitions for the Ontological Machine.
+# Basis Discovery Algorithm
+This file contains the core definitions for the basis discovery algorithm.
 -/
 
 namespace BasisDiscovery

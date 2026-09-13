@@ -1,4 +1,4 @@
-# Lattice Theory Ontological Machine
+# Basis Discovery in Complete Lattices
 
 This repository contains a Lean 4 formalization of the **Basis Discovery Algorithm** and **Algorithmic Friction** in abstract complete lattices. It models how greedy generator extraction operates within closure systems and explores the structural constraints (such as geometric and semimodular friction) that dictate algorithmic performance beyond discrete combinatorial boundaries.
 
