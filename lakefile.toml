@@ -1,0 +1,21 @@
+name = "lattice-theory"
+version = "1.0.0"
+description = "Lattice Theory Ontological Machine"
+license = "Apache-2.0"
+keywords = ["math", "lattice"]
+defaultTargets = ["LatticeTheory"]
+lintDriver = "batteries/runLinter"
+lintDriverArgs = ["LatticeTheory"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+[[lean_lib]]
+name = "LatticeTheory"
