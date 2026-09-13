@@ -20,14 +20,18 @@ namespace BasisDiscovery
 variable {L : Type} [CompleteLattice L]
 /- 
 This typeclass acts as a firewall against circular logic. 
-By requiring a Well-Founded order, it mathematically guarantees there are no infinite descending chains or circular priority loops (e.g., A < B < C < A), ensuring a fundamental "bottom" always exists.
+By requiring a Well-Founded order, it mathematically guarantees there are no 
+infinite descending chains or circular priority loops (e.g., A < B < C < A), 
+ensuring a fundamental "bottom" always exists.
 -/
 variable {J : Type} [LinearOrder J] [WellFoundedLT J]
 variable (embed : J → L)
 
 /--
-This axiom mathematically guarantees that the universe is built out of discrete, fundamental building blocks (atoms/join-irreducibles). 
-It acts as a firewall to prevent the algorithm from running on continuous spaces or fractals, which are infinitely divisible and possess no fundamental generators.
+This axiom mathematically guarantees that the universe is built out of discrete, 
+fundamental building blocks (atoms/join-irreducibles). 
+It acts as a firewall to prevent the algorithm from running on continuous spaces 
+or fractals, which are infinitely divisible and possess no fundamental generators.
 -/
 class IsGenerated {L J : Type} [CompleteLattice L] (embed : J → L) : Prop where
   eq_iSup : ∀ x : L, x = ⨆ (j : J) (_ : embed j ≤ x), embed j
@@ -58,7 +62,9 @@ lemma candidates_nonempty (x : L) (h : x < ⊤) : { j : J | ¬ (embed j ≤ x) }
 open Classical in
 /--
 The `open Classical` statement invokes the Axiom of Choice.
-It acts as a firewall against strictly Constructive mathematics, allowing the algorithm to mathematically "choose" a minimum generator out of uncountably infinite sets where computing one is physically impossible.
+It acts as a firewall against strictly Constructive mathematics, allowing the 
+algorithm to mathematically "choose" a minimum generator out of uncountably 
+infinite sets where computing one is physically impossible.
 -/
 noncomputable def fixedPriorityPhi (x : L) (h : x < ⊤) : J :=
   let candidates := { j : J | ¬ (embed j ≤ x) }
@@ -70,13 +76,19 @@ theorem novelty_of_fixedPriorityPhi (x : L) (h : x < ⊤) :
   WellFounded.min_mem wellFounded_lt { j : J | ¬ (embed j ≤ x) } (candidates_nonempty embed x h)
 
 open Classical in
-noncomputable def x_seq (o : Ordinal) : L :=
+/--
+The transfinite sequence of extracted generators across ordinals.
+-/
+noncomputable def xSeq (o : Ordinal) : L :=
   Ordinal.limitRecOn o
     (⊥ : L)
     (fun _ x => if h : x < ⊤ then x ⊔ embed (fixedPriorityPhi embed x h) else x)
     (fun a _ f => ⨆ (b : Ordinal) (hb : b < a), f b hb)
 
-noncomputable def sieve_output : L :=
-  ⨆ (o : Ordinal.{0}), x_seq embed o
+/--
+The final supremum of all generators extracted across the transfinite sequence.
+-/
+noncomputable def sieveOutput : L :=
+  ⨆ (o : Ordinal.{0}), xSeq embed o
 
 end BasisDiscovery

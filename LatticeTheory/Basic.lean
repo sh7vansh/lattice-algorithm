@@ -9,4 +9,5 @@ Authors: Shivansh Singh
 Basic definitions for Lattice Theory.
 -/
 
+/-- A placeholder definition for the module. -/
 def hello := "world"
