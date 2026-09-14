@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 authors:
   - family-names: "Singh"
     given-names: "Shivansh"
-title: "Basis Discovery in Complete Lattices"
+title: "Basis Discovery Algorithm in Complete Lattices"
 version: 1.0.2
 date-released: 2026-09-14
 url: "https://github.com/sh7vansh/lattice-algorithm"
