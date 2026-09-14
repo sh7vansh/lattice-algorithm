@@ -1,5 +1,5 @@
 name = "lattice-theory"
-version = "1.0.1"
+version = "1.0.2"
 description = "Formalization of basis discovery algorithms for complete lattices"
 license = "Apache-2.0"
 keywords = ["math", "lattice"]
