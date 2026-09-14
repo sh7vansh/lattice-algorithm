@@ -1,4 +1,5 @@
 # Basis Discovery in Complete Lattices
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22739359.svg)](https://doi.org/10.5281/zenodo.22739359)
 
 This repository contains a Lean 4 formalization of the **Basis Discovery Algorithm** and **Algorithmic Friction** in abstract complete lattices. It models how greedy generator extraction operates within closure systems and explores the structural constraints (such as geometric and semimodular friction) that dictate algorithmic performance beyond discrete combinatorial boundaries.
 
