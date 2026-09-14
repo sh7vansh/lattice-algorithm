@@ -4,7 +4,7 @@ authors:
   - family-names: "Singh"
     given-names: "Shivansh"
 title: "Basis Discovery in Complete Lattices"
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-09-14
 url: "https://github.com/sh7vansh/lattice-algorithm"
 repository-code: "https://github.com/sh7vansh/lattice-algorithm"
